@@ -11,10 +11,10 @@
     <!-- Header -->
     <header>
         <div>
-            <h1 id="logo" class="highlightText">Wiktoria Sobczyk</h1>
+            <h1 id="logo">Wiktoria Sobczyk</h1>
             <!-- Navigation -->
             <nav>
-                <!-- Hamburger Icon (visible on mobile) -->
+                <!-- Hamburger Icon -->
                 <input type="checkbox" id="hamburgerCheckbox">
                 <label id="hamburger" for="hamburgerCheckbox">
                     <svg class="hamSvg" viewBox="0 0 100 100" width="50" onclick="this.classList.toggle('active')">
@@ -29,15 +29,15 @@
                             d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
                     </svg>
                 </label>
-                <!-- Navigation Menu -->
-                <ul id="navList">
-                    <li><a href="index.html">Strona główna</a></li>
-                    <li><a href="my-projects.html">Moje projekty</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                </ul>
             </nav>
         </div>
     </header>
+    <!-- Navigation Menu -->
+    <ul id="navList">
+        <li><a href="index.html">Strona główna</li>
+        <li><a href="moje-projekty.html">Moje projekty</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
 
     <!-- Main Content -->
     <main>
@@ -45,9 +45,14 @@
         <section class="dividedSection">
             <div>
                 <h1>Cześć!</h1>
-                <p>Nazywam się <span class="highlightText">Wiktoria</span> i jestem developerem webowym. Zajmuję się tworzeniem aplikacji i stron internetowych, które spełniają oczekiwania użytkowników i pomagają firmom rozwijać się w świecie cyfrowym.</p>
-                <div class="outlineBttn" style="margin-top: 20px;">
-                    <a href="#"><span>Skontaktuj się ze mną</span></a>
+                <p>Nazywam się <b>Wiktoria</b> i jestem developerem webowym. Zajmuję się tworzeniem aplikacji i stron internetowych, które spełniają oczekiwania użytkowników i pomagają firmom rozwijać się w świecie cyfrowym.</p>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div class="filledBttn" style="margin-top: 20px;">
+                        <a href="moje-projekty.html"><span>Zobacz moje projekty</span></a>
+                    </div>
+                    <div class="outlineBttn" style="margin-top: 20px;">
+                        <a href="kontakt.html"><span>Skontaktuj się ze mną</span></a>
+                    </div>
                 </div>
             </div>
             <div>
