@@ -310,10 +310,35 @@ section {
     margin-top: 30px;
     width: 100%;
 }
+.twoItemsRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+.twoItemsRow .projectItem {
+    width: 50%;
+}
+.threeItemsRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+.threeItemsRow .projectItem {
+    width: 33%;
+}
 .projectItem {
     height: 250px;
     border-radius: 10px;
     overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+.projectItem:hover {
+    cursor: pointer;
+    width: 80%;
 }
 .projectImage img {
     width: 100%;
@@ -337,7 +362,6 @@ section {
     color: var(--background-color);
     transition: all .3s ease-in-out;
     opacity: 0;
-     
 }
 .projectInfo h2 {
     font-size: 2rem;
@@ -349,18 +373,9 @@ section {
     font-weight: 300;
     opacity: .7;
 }
-.projectItem:hover {
-    cursor: pointer;
-    width: 80%;
-}
 .projectItem:hover .projectInfo {
     transform: translateY(-100%);
     opacity: 1;
-}
-.gridRowThreeItems {
-    display: flex;
-    gap: 15px;
-    width: 100%;
 }
 /* Footer */
 footer {
