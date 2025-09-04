@@ -303,47 +303,55 @@ section {
     background: #fff;
     scale: 1.05;
 }
-.projectsList {
-    display: flex;
-    flex-direction: column;
+#projectList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
     margin-top: 30px;
     width: 100%;
 }
-.twoItemsRow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+.projectItemContainer {
     width: 100%;
-}
-.twoItemsRow .projectItem {
-    width: 50%;
-}
-.threeItemsRow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-}
-.threeItemsRow .projectItem {
-    width: 33%;
-}
-.projectItem {
     height: 250px;
     border-radius: 10px;
-    overflow: hidden;
-    transition: all .3s ease-in-out;
 }
-.projectItem:hover {
+.projectItem {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    transition: all .3s ease-in-out .3s;
+}
+.projectBackgroundItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    transition: all .3s ease-in-out .3s;
+}
+.projectItemContainer:hover .projectBackgroundItem {
     cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.projectItemContainer:hover .projectItem {
     width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 101;
 }
 .projectImage img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
+    transition: all .3s ease-in-out .3s;
 }
 .projectInfo {
     padding: 30px;
