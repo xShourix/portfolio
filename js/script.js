@@ -69,8 +69,7 @@ window.onload = () => {
             const projectItem = document.createElement('div');
             projectItem.classList.add('projectItemContainer');
             projectItem.innerHTML = `
-                <div class="projectBackgroundItem">
-                    <div class="projectItem">
+                <div class="projectItem">
                     <div class="projectImage">
                         <img src="${project.imageUrl}" alt="${project.title}">
                     </div>
@@ -78,7 +77,6 @@ window.onload = () => {
                         <h3>${project.title}</h3>
                         <p>${project.description}</p>
                     </div>
-                </div>
                 </div>
             `;
             projectList.appendChild(projectItem);
