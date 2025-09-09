@@ -11,7 +11,8 @@
     <!-- Header -->
     <header>
         <div>
-            <h1 id="logo">Wiktoria Sobczyk</h1>
+            <h1 id="logo"><img src="img/logo3.png" alt="logo" style="height: 30px; width: auto;">
+            </h1>
             <!-- Navigation -->
             <nav>
                 <!-- Hamburger Icon -->
@@ -41,22 +42,69 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero section -->
-        <section class="dividedSection">
-            <div>
-                <h1>Cześć!</h1>
-                <p>Nazywam się <b>Wiktoria</b> i jestem developerem webowym. Zajmuję się tworzeniem aplikacji i stron internetowych, które spełniają oczekiwania użytkowników i pomagają firmom rozwijać się w świecie cyfrowym.</p>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                    <div class="filledBttn" style="margin-top: 20px;">
-                        <a href="moje-projekty.html"><span>Zobacz moje projekty</span></a>
-                    </div>
-                    <div class="outlineBttn" style="margin-top: 20px;">
-                        <a href="kontakt.html"><span>Skontaktuj się ze mną</span></a>
-                    </div>
-                </div>
+        <!-- Hero Section -->
+        <section id="hero">
+            <h1>Wiktoria<br>Sobczyk</h1>
+            <p>Programistka | Web Developer | Grafik</p>
+        </section>
+        <!-- Project Section -->
+         <section>
+            <h2>Wybrane prace</h2>
+            <div class="projectCategories">
+                <button class="categoryButton active" onclick="filterProjects('all')">Wszystkie</button>
+                <button class="categoryButton" onclick="filterProjects('web')">Strony WWW</button>
+                <button class="categoryButton" onclick="filterProjects('app')">Aplikacje</button>
+                <button class="categoryButton" onclick="filterProjects('graphic')">Grafika</button>
             </div>
-            <div>
-                <img src="img/bg-tmp.png" style="width: 100%; height: 100%; mix-blend-mode: multiply;">
+            <div id="projectList"></div>
+        </section>
+        <!-- About Section -->
+        <section id="about">
+            <h2>O mnie</h2>
+            <div class="dividedRow">
+                <div class="aboutImage">
+                    <img src="img/bg-tmp.png" alt="Wiktoria Sobczyk">
+                </div>
+                <div>
+                    <p>Cześć! Nazywam się Wiktoria Sobczyk i jestem pasjonatką tworzenia stron internetowych, aplikacji oraz grafiki. Moje umiejętności obejmują HTML, CSS, JavaScript, a także narzędzia do projektowania graficznego. Lubię łączyć kreatywność z technologią, aby tworzyć estetyczne i funkcjonalne rozwiązania.</p>
+                    <h3>Umiejętności</h3>
+                    <div class="skills">
+                        <span class="skill">HTML</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">React</span>
+                        <span class="skill">Adobe Photoshop</span>
+                        <span class="skill">Adobe Illustrator</span>
+                        <span class="skill">Figma</span>
+                </div>
+            </div>   
+        </section>
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Usługi</h2>
+            <div class="service">
+                <h3>Tworzenie stron internetowych</h3>
+                <p>Projektuję i tworzę responsywne strony internetowe, które są estetyczne i funkcjonalne.</p>
+            </div>
+            <div class="service">
+                <h3>Rozwój aplikacji webowych</h3>
+                <p>Tworzę interaktywne aplikacje webowe, które spełniają potrzeby użytkowników.</p>
+            </div>
+            <div class="service">
+                <h3>Projektowanie graficzne</h3>
+                <p>Oferuję usługi projektowania graficznego, w tym logo, banery i materiały marketingowe.</p>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Pozostańmy w kontakcie</h2>
+            <p>Masz pytania lub chcesz nawiązać współpracę? Skontaktuj się ze mną!</p>
+            <p>Email: <a href="mailto:"></a>
+            <p>Telefon: <a href="tel:+48"></a></p>
+            <div class="socialLinks">
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Behance</a>
             </div>
         </section>
     </main>
@@ -65,6 +113,17 @@
     <footer>
         <p>&copy; <script type="text/javascript">document.write( new Date().getFullYear() );</script> Wiktoria Sobczyk | Wszystkie prawa zastrzeżone </p>
     </footer>
-    <script src="js/script.js"></script>
+    <div id="scrollToTop" onclick="scrollToTop()">&uarr;</div>
+    <!-- 3D Model Container -->
+    <div id="container3D"></div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.129.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>

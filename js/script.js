@@ -1,3 +1,7 @@
+import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js';
+import { OrbitControls } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+
 // Adds/removes hideHeader class
 let lastScrollY = window.scrollY;
 const header = document.querySelector("header");
@@ -112,3 +116,51 @@ style.innerHTML = `
 }
 `;
 document.head.appendChild(style);
+
+// 3D Model setup
+if (document.getElementById('container3D')) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(10, window.clientWidth / window.clientHeight, 0.1, 1000);
+    camera.position.z = 13;
+    let butterfly;
+    const loader = new GLTFLoader();
+    loader.load('models/animated_butterfly.gltf', (gltf) => {
+        butterfly = gltf.scene;
+        //butterfly.scale.set(0.01, 0.01, 0.01);
+        //butterfly.position.set(0, -2, 0);
+        scene.add(butterfly);
+    }, (xhr) => {
+        //console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    }, (error) => {
+        //console.error(error);
+    });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    document.getElementById('container3D').appendChild(renderer.domElement);
+
+    const reRender3D = () => {
+        requestAnimationFrame(reRender3D);
+        renderer.render(scene, camera);
+    }
+    reRender3D();
+}
+/* Note: This is a basic example using Three.js to create a rotating cube. 
+const container3D = document.getElementById('container3D');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, container3D.clientWidth / container3D.clientHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(container3D.clientWidth, container3D.clientHeight);
+container3D.appendChild(renderer.domElement);
+camera.position.z = 5;
+
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+function animate() {
+    requestAnimationFrame(animate);
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    renderer.render(scene, camera);
+}
+animate();
+*/
