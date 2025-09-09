@@ -71,16 +71,16 @@ window.onload = () => {
         projects.forEach(project => {
             console.log(project);
             const projectItem = document.createElement('div');
-            projectItem.classList.add('projectItemContainer');
+            projectItem.classList.add('projectItem');
+            projectItem.classList.add('dividedRow');
             projectItem.innerHTML = `
-                <div class="projectItem">
-                    <div class="projectImage">
-                        <img src="${project.imageUrl}" alt="${project.title}">
-                    </div>
-                    <div class="projectInfo">
-                        <h3>${project.title}</h3>
-                        <p>${project.description}</p>
-                    </div>
+                <div class="projectImage">
+                    <img src="${project.imageUrl}" alt="${project.title}">
+                </div>
+                <div class="projectInfo">
+                    <h3>${project.title}</h3>
+                    <h2>${project.categories}</h2>
+                    <p>${project.description}</p>
                 </div>
             `;
             projectList.appendChild(projectItem);

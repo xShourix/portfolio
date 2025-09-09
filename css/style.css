@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --primary-color: #E9B8B8;
+    --primary-color: #ad4bcb;
     --background-color: #f4f4f4;
     --text-color: #000000;
 }
@@ -54,7 +54,42 @@ a {
     text-decoration: none;
 }
 
-/* Header styling */
+/* Button styles */
+.categoryButton.active, .categoryButton {
+    border: none;
+    padding: 0.5rem 2rem;
+    margin: 0.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.categoryButton {
+    background-color: #faf9f9;
+    opacity: 0.7;
+}
+.categoryButton.active {
+    background-color: white;
+    opacity: 1;
+}
+.categoryButton:hover {
+    background-color: white;
+    opacity: 1;
+}
+.categoryButton:hover, .categoryButton.active:hover {
+    scale: 1.05;
+}
+
+/* Container styles */
+.dividedRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Header styles */
 header {  
     background-color: var(--background-color);
     padding: 10px 0;
@@ -196,6 +231,10 @@ header > div {
 section {
     margin: auto;
     width: 90%;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Hero Section */
@@ -243,6 +282,53 @@ section {
     margin: 0 1rem 1rem;
     color: var(--primary-color);
     font-weight: bold;
+}
+/* About Section */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+.skill {
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.skill .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    width: 120px;
+    top: calc(100% + 10px); /* Position above the skill */
+    left: 50%;
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.skill:hover .tooltiptext {
+    visibility: visible;
+}
+.skill .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
 }
 /* 3D Model Section */
 #container3D {
